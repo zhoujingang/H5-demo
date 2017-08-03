@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="one">
+		我是一层
+		<div id="two">
+			我是二层
+			<div id="three">
+				我是三层
+			</div>
+		</div>
+	</div>
+	<script>
+		one.addEventListener('click',function(){
+			console.log('一层捕获');
+		},true);
+		two.addEventListener('click',function(){
+			console.log('二层捕获');
+		},true);
+		two.addEventListener('click',function(){
+			console.log('二层冒泡');
+		},false);
+		three.addEventListener('click',function(){
+			console.log('三层捕获');
+		},true);
+		three.addEventListener('click',function(){
+			console.log('三层冒泡');
+		},false);
+	</script>
+</body>
+</html>
